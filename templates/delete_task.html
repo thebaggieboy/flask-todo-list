@@ -1,0 +1,17 @@
+{% extends "./base.html" %}
+
+{% block head %}
+  <title>Delete Task</title>
+{% endblock head %}
+
+{% block content %}
+
+<div class="container p-3 text-center" style="margin-top:40px;">
+    <h4>Are you sure you want to delete this task? this action cannot be reversed.</h4>
+<form action="/">
+  <span><input type="submit" name="submit" class="btn btn-danger" value="YES"></span>
+   <span> <a href="./index.html" class="btn btn-default">Cancel</a></span>
+</form>
+</div>
+  
+{% endblock content %}

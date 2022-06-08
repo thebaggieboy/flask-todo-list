@@ -1,0 +1,22 @@
+{% extends "./base.html" %}
+
+{% block head %}
+  <title>Delete Task</title>
+{% endblock head %}
+
+{% block content %}
+<main style="padding: 40px;">
+  <div class="container" style="margin-top: 40px;">
+      <form action="/" method="POST">
+          <div class="form-group">
+              <input type="text"  class="form-control" name="title" value="{{task.title}}"> <br>
+              <textarea name="content" class="form-control" id="" cols="30" rows="10">{{task.content}}</textarea> <br>
+              <input type="submit" value="update task" class="btn btn-primary" name="submit" id="">
+          </div>
+      </form>
+  </div>
+
+ 
+
+</main>
+{% endblock content %}

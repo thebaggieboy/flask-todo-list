@@ -1,0 +1,61 @@
+{% extends "./base.html" %}
+{% block head %}
+<title>Todo List</title>
+{% endblock head %}
+
+{% block content %}
+<div class="container-fluid bg-dark text-light p-3">
+    <h1 class="text-center">Task Manager</h1>
+    <p class="lead text-center">This is a simple proof of concept (POF) CRUD todo application that stores lists of tasks to do.It was written using python and Flask framework</p>
+</div>
+<main style="padding: 20px;">
+    <div class="container">
+        <form action="/" method="POST">
+            <div class="form-group">
+                <label>Task Name</label>
+                <input type="text"  class="form-control" name="title" placeholder="add task"> <br>
+                <label for="">Task Details</label>
+                <textarea name="content" id="" class="form-control" cols="30" rows="3"></textarea> <br>
+                <input type="submit" value="add task" class="btn btn-dark" name="submit" id="">
+            </div>
+        </form>
+    </div>
+
+    <div id="todos" class="container p-3">
+        <h2>Tasks</h2>
+        <p class="lead" style="font-size: 12px;"></p>
+        <div class="list-group">
+      
+          {% if tasks %}
+          {% for task in tasks  %}
+          <a href="/task/{{task.id}}" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+            <img style="background-color: black;" width="32" height="32" class="rounded-circle flex-shrink-0">
+            <div class=" w-100 justify-content-between">
+              <div>
+                <h6 class="mb-0">{{task.title}}</h6>
+                <p class="mb-0 opacity-75">{{task.content}}</p>
+              </div>
+              <small class="opacity-50 text-nowrap">{{task.date_created}}</small> <br>
+             
+            </div>
+          </a>
+        {% endfor %}
+
+          {% else %}
+          <div class="container p-3">
+            <p class="lead">There are no tasks added yet, fill in the form above to add new tasks.</p>
+          </div>
+          {% endif %}
+
+          
+          </div>
+          
+          
+    </div>
+
+</main>
+
+
+{% endblock content %}
+
+   

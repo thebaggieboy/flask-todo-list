@@ -1,0 +1,24 @@
+{% extends "./base.html" %}
+
+{% block title %}
+
+  <title>Task detail</title>
+{% endblock title %}
+
+{% block content %}
+  <div class="container" style="padding: 40px;">
+    <h2 class="text-center">{{task.title}}</h2>  <br>
+    <div style="padding: 10px; text-align: center;" class="">
+      <span><a href="/update/{{task.id}}">Update Task</a> </span> 
+     
+    </div>
+    <hr>
+    <div class="container">
+      <p class="lead text-center">{{task.content}}</p>
+    </div> <br>
+    <div class="footer float-end">
+      <a href="/delete/{{task.id}}" class="btn btn-danger">Delete {{task.title}}</a>
+    </div>
+
+  </div>
+{% endblock content %}
